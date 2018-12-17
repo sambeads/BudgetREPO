@@ -6,5 +6,8 @@ Right now, I'm imagining a tool that pulls a number of Chase-generated excel she
 
 I am going to start with Chase Reserve then possibly both Chase formats. 
 
-
+Additional features:
+	Command line interface
+	Grabs CSVs directly from Chase website
+	
 '''
