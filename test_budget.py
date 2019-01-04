@@ -40,3 +40,11 @@ def test_inc_with_given(high):
 # @given(st.sampled_from(elements))
 # def test_inc_with_given(high):
 #     assert skeleton.increment(high) == (high +1)
+
+
+
+# I want to check to make sure that there aren't any rows with negative returns
+def test_no_negative_rows():
+    df = skeleton.read_from_excel()
+    has_rows_less_than_zero = df['Amount'][df.Amount < 0].any()
+    assert not has_rows_less_than_zero
