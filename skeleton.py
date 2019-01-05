@@ -8,13 +8,14 @@ Things I can do:
 	(Done) Change the 'amount' columns to positive
 	(Done) Put in columns with empty strings to make it like my format
 	(Done) Put in empty rows between dates
-	Ignore scratch
-    Create github
+	() Ignore scratch
+    (Done) Create github
     () Work on CLI command alias
     () Clean up: create docstrings, move functions, refactor and rename
     () Try creating testing for this stuff
     () Figure out how to connect to Chase thru API
     () Take out any identifying information so that my pushes won't show my name
+    () Use SSH keys
 '''
 
 
