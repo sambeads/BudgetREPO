@@ -13,7 +13,6 @@ def logger(configurationfile):
         #page = session.post(
             #login_page, headers = payload)
         #get = session.get(login_page)
-        import ipdb; ipdb.set_trace()
         print(page.text)
 
 if __name__ == '__main__':
