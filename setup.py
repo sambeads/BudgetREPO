@@ -13,10 +13,11 @@ with open('requirements.txt') as f:
 
 # What does an entry point do?
 setup(
-    name='Budget',
+    name='budget',
     python_requires='>=3.6',
-    install_requires=all_reqs, # takes a list
-    entry_points={'console_scripts': [
-        'budget=BudgetREPO.cli:main'], }
+    install_requires=all_reqs,  # takes a list
+    entry_points='''
+    [console_scripts]
+    budget=cli.py:run'''
 )
 

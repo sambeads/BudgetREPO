@@ -63,7 +63,6 @@ def add_columns_and_sort(df):
     df['Payment'] = 'Chase'
     df['Empty'] = ''
     df['Date'] = pd.to_datetime(df['Post Date'])
-    import ipdb; ipdb.set_trace()
     df['Description'] = df['Description'].map(lambda x: x.title())
     # take relevant columns
     df_columns = df[['Date', 'Marker', 'Subcategory',
