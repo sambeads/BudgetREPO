@@ -11,11 +11,14 @@ Things I can do:
     () Ignore scratch
     (Done) Create github
     () Work on CLI command alias
-    () Clean up: create docstrings, move functions, refactor and rename
+    (Partial) Clean up: create docstrings, move functions, refactor and rename
     () Try creating testing for this stuff
     () Figure out how to connect to Chase thru API
     (Done) Take out any identifying information so that my pushes won't show my name
     () Use SSH keys
+    () Configure command
+    (Done) Get example for others to test
+    (Done) Change case of description
 '''
 
 
@@ -60,8 +63,9 @@ def add_columns_and_sort(df):
     df['Payment'] = 'Chase'
     df['Empty'] = ''
     df['Date'] = pd.to_datetime(df['Post Date'])
+    df['Description'] = df['Description'].map(lambda x: x.title())
     # take relevant columns
-    df_columns = df[['Marker', 'Date', 'Subcategory',
+    df_columns = df[['Date', 'Marker', 'Subcategory',
                      'Type', 'Amount', 'Empty', 'Description', 'Payment']]
     # Sort by the date
     sorted_df = df_columns.sort_values(by=['Date'])
@@ -114,23 +118,5 @@ def add_spaces_to_dataframe(df):
 
 
 def write_to_csv(df, cleaned_file_path):
-    df.to_csv(cleaned_file_path, index=False)
-
-
-if __name__ == '__main__':
-    # 1. Get the relevant filepath from settings ()
-    uncleaned_file_path = output_file_path(file_path_of_uncleaned=True)
-    cleaned_file_path = output_file_path(file_path_of_uncleaned=False)
-
-    # 2. Read in the csv as a df
-    initial_dataframe = read_from_csv_filepath(uncleaned_file_path)
-
-    # 2. Clean the df; add spaces, add columns, add dates etc
-    cleaned_dataframe = apply_cleaning_functions(initial_dataframe)
-    
-    # 4. Write out to the computer
-    write_to_csv(df=cleaned_dataframe, cleaned_file_path=cleaned_file_path)
-    
-    # 5. Testing?
-    pass
+    df.to_csv(cleaned_file_path, index=False,columns = ['Marker','Date', 'Type', 'Subcategory', 'Amount', 'Empty', 'Description', 'Payment'])
 
